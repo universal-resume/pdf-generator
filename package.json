@@ -1,0 +1,37 @@
+{
+  "name": "@universal-resume/pdf-generator",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "pdf-generator": "cli.ts"
+  },
+  "scripts": {
+    "lint": "biome lint .",
+    "lint:fix": "biome lint --write .",
+    "format": "biome format .",
+    "format:fix": "biome format --write .",
+    "check": "biome check .",
+    "check:fix": "biome check --write ."
+  },
+  "license": "MIT",
+  "description": "A CLI tool for generating PDF resumes from JSON data using universal-resume format",
+  "dependencies": {
+    "@effect/cli": "^0.69.0",
+    "@effect/platform-node": "^0.95.0",
+    "@universal-resume/html-renderer": "^2.0.0",
+    "effect": "^3.17.7",
+    "ora": "^8.2.0",
+    "puppeteer": "^24.16.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.0",
+    "@types/node": "^24.2.1",
+    "@types/prompts": "^2.4.9",
+    "@types/puppeteer": "^5.4.7",
+    "tsx": "^4.20.4",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

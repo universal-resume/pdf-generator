@@ -1,0 +1,234 @@
+{
+  "basics": {
+    "headline": "Vice President of IT Operations",
+    "name": "Bill Palmer",
+    "availability": "ASAP",
+    "location": {
+      "city": "Parts Unlimited Headquarters",
+      "countryCode": "US",
+      "region": "Midwest"
+    },
+    "contact": {
+      "email": "bill.palmer@example.com",
+      "phone": "+15551234567",
+      "linkedin": "https://www.linkedin.com/in/bill-palmer"
+    },
+    "summary": "IT operations leader charged with stabilizing business-critical systems and rescuing the Phoenix ERP program. Pragmatic, business-first problem solver who builds trust, flow, and collaboration across Development, Operations, and Security.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/bill-palmer",
+        "username": "bill-palmer"
+      },
+      {
+        "network": "Github",
+        "url": "https://github.com/bill-palmer",
+        "username": "bill-palmer"
+      }
+    ],
+    "remote": false
+  },
+  "employments": [
+    {
+      "type": "internal",
+      "organization": {
+        "name": "Parts Unlimited",
+        "location": {
+          "city": "Parts Unlimited Headquarters",
+          "countryCode": "US"
+        },
+        "description": "A national retail and e-commerce company undergoing major IT modernization."
+      },
+      "position": "Vice President of IT Operations",
+      "startDate": "2021-01",
+      "summary": "Promoted to lead IT Operations with a mandate to restore service reliability, align IT delivery to business outcomes, and turn around the Phoenix Project.",
+      "highlights": [
+        "Restored stability of revenue-impacting systems within first 90 days",
+        "Established cross-functional change advisory process to reduce failed changes",
+        "Reduced mean time to recovery (MTTR) by introducing blameless postmortems",
+        "Partnered with Development and Security to implement a CI/CD pipeline for core services"
+      ],
+      "references": [
+        {
+          "date": "2022-06",
+          "name": "Steve Masters",
+          "position": "Chief Executive Officer",
+          "contact": {
+            "email": "steve.masters@example.com",
+            "linkedin": "https://www.linkedin.com/in/steve-masters"
+          },
+          "testimonial": "Bill brought calm leadership and business alignment to our most critical technology initiatives. The turnaround of Phoenix was pivotal."
+        }
+      ],
+      "tags": [
+        "Leadership",
+        "DevOps",
+        "Incident Management",
+        "Change Management",
+        "Service Reliability"
+      ],
+      "url": "https://www.partsunlimited.example.com"
+    },
+    {
+      "type": "internal",
+      "organization": {
+        "name": "Parts Unlimited",
+        "location": {
+          "city": "Parts Unlimited Headquarters",
+          "countryCode": "US"
+        },
+        "description": "A national retail and e-commerce company."
+      },
+      "position": "Director of Midrange Technology Operations",
+      "startDate": "2018-03",
+      "endDate": "2020-12",
+      "summary": "Led the team responsible for order processing, inventory, and fulfillment platforms on midrange systems.",
+      "highlights": [
+        "Achieved 99.9% availability for order management systems",
+        "Introduced capacity planning that prevented peak-season outages",
+        "Implemented proactive monitoring with clear SLOs and escalation paths"
+      ],
+      "tags": ["Operations", "Infrastructure", "Monitoring", "SRE Practices"]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Leadership",
+      "level": "expert",
+      "yearsOfExperience": 15,
+      "tags": ["Team Building", "Stakeholder Management"]
+    },
+    {
+      "name": "IT Service Management",
+      "level": "advanced",
+      "yearsOfExperience": 10,
+      "tags": ["Incident Management", "Problem Management", "Change Control"]
+    },
+    {
+      "name": "DevOps",
+      "level": "advanced",
+      "yearsOfExperience": 6,
+      "tags": ["CI/CD", "Agile", "Value Stream Mapping"]
+    },
+    {
+      "name": "Site Reliability Engineering",
+      "level": "advanced",
+      "yearsOfExperience": 4,
+      "tags": ["SLI/SLO", "Error Budgets", "Postmortems"]
+    }
+  ],
+  "education": [
+    {
+      "area": "Information Systems",
+      "organization": {
+        "name": "State University",
+        "location": {
+          "city": "Springfield",
+          "countryCode": "US"
+        }
+      },
+      "startDate": "1999",
+      "endDate": "2003",
+      "type": "Bachelor of Science",
+      "url": "https://www.stateuniversity.example.edu"
+    }
+  ],
+  "initiatives": [
+    {
+      "summary": "Cross-functional transformation program to increase deployment frequency, improve stability, and accelerate feedback loops across Development, Operations, and Security.",
+      "endDate": "2022-12",
+      "organization": {
+        "name": "Parts Unlimited",
+        "location": {
+          "city": "Parts Unlimited Headquarters",
+          "countryCode": "US"
+        }
+      },
+      "highlights": [
+        "Increased deployment frequency from monthly to weekly for core services",
+        "Cut change failure rate by 40% through peer reviews and automated testing",
+        "Introduced value stream mapping workshops to identify and remove bottlenecks"
+      ],
+      "location": {
+        "city": "Parts Unlimited Headquarters",
+        "countryCode": "US"
+      },
+      "name": "Phoenix Project DevOps Transformation",
+      "position": "Program Lead",
+      "references": [
+        {
+          "date": "2022-11",
+          "name": "Erik Reid",
+          "position": "Advisor",
+          "testimonial": "Bill embraced the Three Ways—flow, feedback, and continual learning—and institutionalized them.",
+          "contact": {
+            "email": "erik.reid@example.com"
+          }
+        }
+      ],
+      "startDate": "2021-02",
+      "status": "Completed",
+      "tags": ["Transformation", "DevOps", "Culture"],
+      "type": "open-source",
+      "url": "https://intranet.partsunlimited.example.com/phoenix"
+    }
+  ],
+  "certificates": [
+    {
+      "date": "2020-05",
+      "issuer": {
+        "name": "AXELOS",
+        "location": {
+          "city": "London",
+          "countryCode": "GB"
+        },
+        "description": "Global best practice owner for ITIL."
+      },
+      "name": "ITIL Foundation Certificate in IT Service Management",
+      "summary": "Validated knowledge of ITIL concepts for incident, problem, and change management.",
+      "url": "https://www.axelos.com/certifications/itil-foundation",
+      "tags": ["ITIL", "Service Management"]
+    }
+  ],
+  "publications": [
+    {
+      "authors": ["Bill Palmer"],
+      "doi": "PU-DX-2022-001",
+      "name": "From Firefighting to Flow: Lessons from the Phoenix Project",
+      "publisher": {
+        "name": "Parts Unlimited",
+        "location": {
+          "city": "Parts Unlimited Headquarters",
+          "countryCode": "US"
+        },
+        "description": "Internal and partner-facing publications."
+      },
+      "date": "2022-10",
+      "summary": "A practical account of stabilizing critical systems and implementing DevOps practices to improve throughput and reliability.",
+      "tags": ["DevOps", "SRE", "ITSM"],
+      "type": "presentation",
+      "url": "https://www.partsunlimited.example.com/resources/firefighting-to-flow"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Lean Management",
+      "summary": "Applying Lean principles and the Three Ways to tech operations."
+    },
+    {
+      "name": "Motorcycling",
+      "tags": ["Travel", "Adventure"]
+    }
+  ],
+  "languages": [
+    {
+      "name": "English",
+      "fluency": "fluent",
+      "countryCode": "US"
+    }
+  ],
+  "meta": {
+    "lastModified": "2025-08-14",
+    "schema": "universal-resume-v2.0.0"
+  }
+}
