@@ -169,11 +169,6 @@ const printPDF = (
         }),
       catch: (error) => new Error(`Failed to generate PDF: ${error}`),
     })
-
-    yield* Effect.tryPromise({
-      try: () => browser.close(),
-      catch: (error) => new Error(`Failed to close browser: ${error}`),
-    })
   })
 
 // --- SPINNER ---
