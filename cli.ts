@@ -139,19 +139,16 @@ const printPDF = (
       try: () =>
         page.evaluate(
           (data, template, themePrimary, themeSecondary, locale) =>
-            new Promise<void>((resolve) => {
-              // biome-ignore lint/suspicious/noExplicitAny: window namespace should be valid
-              ;(window as any).UniversalResume.HtmlRenderer.Renderer(data, {
-                domElement: document.body,
-                lang: locale,
-                template: template as "chronology",
-                theme: {
-                  color: {
-                    primary: themePrimary,
-                    secondary: themeSecondary,
-                  },
+            (window as any).UniversalResume.HtmlRenderer.Renderer(data, {
+              domElement: document.body,
+              lang: locale,
+              template: template as "chronology",
+              theme: {
+                color: {
+                  primary: themePrimary,
+                  secondary: themeSecondary,
                 },
-              }).then(resolve)
+              },
             }),
           data,
           template,
