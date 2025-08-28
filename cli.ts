@@ -12,10 +12,6 @@ import puppeteer from "puppeteer"
 import packageJson from "./package.json" with { type: "json" }
 
 // --- CHOICES ---
-const listResume = (await fs.readdir(path.resolve("./json"))).filter(
-  (file) => path.extname(file).toLowerCase() === ".json"
-)
-const listTemplates = [DEFAULT_TEMPLATE]
 const listColors = [
   "red",
   "orange",
@@ -39,6 +35,11 @@ const listColors = [
   "zinc",
   "stone",
 ]
+const listLocales = ["en", "fr"]
+const listResume = (await fs.readdir(path.resolve("./json"))).filter(
+  (file) => path.extname(file).toLowerCase() === ".json"
+)
+const listTemplates = [DEFAULT_TEMPLATE]
 
 // --- CLI OPTIONS ---
 const resumeOptions = Options.choice("resume", listResume).pipe(
@@ -59,6 +60,11 @@ const secondaryColorOptions = Options.choice("secondary", listColors).pipe(
 const templateOptions = Options.choice("template", listTemplates).pipe(
   Options.withAlias("t"),
   Options.withDescription("Template to use"),
+  Options.optional
+)
+const localeOptions = Options.choice("locale", listLocales).pipe(
+  Options.withAlias("l"),
+  Options.withDescription("Locale to use"),
   Options.optional
 )
 const outputOptions = Options.text("output").pipe(
@@ -84,6 +90,7 @@ const printPDF = (
   template: string,
   themePrimary: string,
   themeSecondary: string,
+  locale: string,
   out: string
 ) =>
   Effect.gen(function* () {
@@ -131,10 +138,12 @@ const printPDF = (
     yield* Effect.tryPromise({
       try: () =>
         page.evaluate(
-          (data, template, themePrimary, themeSecondary) =>
+          (data, template, themePrimary, themeSecondary, locale) =>
             new Promise<void>((resolve) => {
               // biome-ignore lint/suspicious/noExplicitAny: window namespace should be valid
               ;(window as any).UniversalResume.HtmlRenderer.Renderer(data, {
+                domElement: document.body,
+                lang: locale,
                 template: template as "chronology",
                 theme: {
                   color: {
@@ -142,13 +151,13 @@ const printPDF = (
                     secondary: themeSecondary,
                   },
                 },
-                domElement: document.body,
               }).then(resolve)
             }),
           data,
           template,
           themePrimary,
-          themeSecondary
+          themeSecondary,
+          locale
         ),
       catch: (error) => new Error(`Failed to evaluate page: ${error}`),
     })
@@ -188,10 +197,11 @@ const command = Command.make(
     template: templateOptions,
     primaryColor: primaryColorOptions,
     secondaryColor: secondaryColorOptions,
+    locale: localeOptions,
     output: outputOptions,
     force: forceOptions,
   },
-  ({ resume, template, primaryColor, secondaryColor, output, force }) => {
+  ({ resume, template, primaryColor, secondaryColor, locale, output, force }) => {
     return Effect.gen(function* () {
       yield* Console.log("This tool will generate a PDF from a JSON resume.")
       yield* Console.log("Please follow the prompts to configure the PDF generation.\n")
@@ -225,6 +235,13 @@ const command = Command.make(
             choices: listTemplates.map((template) => ({ title: template, value: template })),
           })
         : template.value
+
+      const resolvedLocale = Option.isNone(locale)
+        ? yield* Prompt.select({
+            message: "Choose a locale",
+            choices: listLocales.map((locale) => ({ title: locale, value: locale })),
+          })
+        : locale.value
 
       const resumeFileContent = yield* Effect.tryPromise(() =>
         fs.readFile(resolvedResumeFile, "utf-8")
@@ -263,6 +280,7 @@ const command = Command.make(
         resolvedTemplate,
         resolvedPrimaryColor,
         resolvedSecondaryColor,
+        resolvedLocale,
         outputPath
       )
 

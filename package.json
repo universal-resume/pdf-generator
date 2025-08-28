@@ -18,7 +18,7 @@
   "dependencies": {
     "@effect/cli": "^0.69.0",
     "@effect/platform-node": "^0.95.0",
-    "@universal-resume/html-renderer": "^2.1.1",
+    "@universal-resume/html-renderer": "^2.2.0",
     "effect": "^3.17.7",
     "ora": "^8.2.0",
     "puppeteer": "^24.16.2"

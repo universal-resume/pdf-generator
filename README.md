@@ -32,12 +32,13 @@ npx pdf-generator
 - `--template <choice>` (`-t`) - Template to use (available: chronology, another)
 - `--primary <choice>` (`-p`) - Primary color
 - `--secondary <choice>` (`-s`) - Secondary color
+- `--locale <choice>` (`-l`) - Locale to use (available: en, fr)
 - `--output <text>` (`-o`) - Output PDF filename
 - `--force <boolean>` (`-f`) - Override any existing pdf
 
 Example with options:
 ```bash
-npx pdf-generator --resume bill-palmer.json --template chronology --primary blue --secondary sky --output resume.pdf --force
+npx pdf-generator --resume bill-palmer.json --template chronology --primary blue --secondary sky --locale fr --output bill-palmer --force 
 ```
 
 ## License
